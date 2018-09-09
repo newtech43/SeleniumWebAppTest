@@ -13,7 +13,7 @@ stage('Retrieve source code') {
      }
     }
      stage('Maven Build') {
-        sh "mvn clean package sonar:sonar"
+        sh "mvn sonar:sonar"
       }
      
 }
