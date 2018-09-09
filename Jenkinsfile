@@ -4,7 +4,6 @@ node('new43') {
      
 stage('Retrieve source code') {
     checkout scm
-    sh " cd $WORKSPACE;/bin/mkdir Build-${env.BUILD_NUMBER} "
     }
      stage('Maven Build') {
       docker.image('maven:3.5-jdk-8-alpine').inside {
