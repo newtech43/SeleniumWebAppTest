@@ -9,7 +9,7 @@ stage('Retrieve source code') {
     // requires SonarQube Scanner 2.8+
     def scannerHome = tool 'sonarqube';
     withSonarQubeEnv('sonarqube') {
-      sh "${scannerHome}/bin/sonar-scanner -Dsonar.host.url=http://18.191.212.235:9000/ -Dsonar.projectName=sonar -Dsonar.projectversion=1.0 -Dsonar.projectKey=sonarqube -Dsonar.sources=/root/workspace/$JOB_NAME/src/ -Dsonar.projectversion=1.0"
+      sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectName=sonar -Dsonar.projectversion=1.0 -Dsonar.projectKey=sonarqube -Dsonar.sources=/root/workspace/$JOB_NAME/src/ -Dsonar.projectversion=1.0"
      }
     }
      stage('Maven Build') {
