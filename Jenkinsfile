@@ -1,10 +1,9 @@
 node('new43') {
 // Delete the workspace
 //deleteDir()
-     def app
+     
 stage('Retrieve source code') {
     checkout scm
-    delivery = load 'repository.groovy'
     sh " cd $WORKSPACE;/bin/mkdir Build-${env.BUILD_NUMBER} "
     }
      stage('Maven Build') {
